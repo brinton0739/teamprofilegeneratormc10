@@ -1,0 +1,13 @@
+const GenerateEmployeeHTML = require('../templates')
+const { Manager, Engineer, Intern } = require('../classes')
+
+const outputHTML = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"><link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"><link rel="stylesheet" href="assets/style.css"><title>Work Day Scheduler</title></head><body><header class="jumbotron"><h1 class="display-3">My Team</h1></header><div class="container"><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Manager Name</h5><h6 class="card-subtitle mb-2 text-muted">Manager</h6><ul class="list-group list-group-flush"><li class="list-group-item">ID: Manager ID</li><li class="list-group-item">Email: manager@email.com</li><li class="list-group-item">Office Number: Office Number</li></ul></div></div><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Engineer Name</h5><h6 class="card-subtitle mb-2 text-muted">Engineer</h6><ul class="list-group list-group-flush"><li class="list-group-item">ID: Engineer ID</li><li class="list-group-item">Email: engineer@email.com</li><li class="list-group-item">Github: github.com/engineer</li></ul></div></div><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Intern Name</h5><h6 class="card-subtitle mb-2 text-muted">Intern</h6><ul class="list-group list-group-flush"><li class="list-group-item">ID: Intern ID</li><li class="list-group-item">Email: intern@email.com</li><li class="list-group-item">School: Intern School</li></ul></div></div></div></body></html>`;
+
+test('Generate Employee HTML', () => {
+    const manager = new Manager('Manager Name', 'Manager ID', 'manager@email.com', 'Office Number');
+    const engineer = new Engineer('Engineer Name', 'Engineer ID', 'engineer@email.com', 'github.com/engineer');
+    const intern = new Intern('Intern Name', 'Intern ID', 'intern@email.com', 'Intern School');
+    const employees = [manager, engineer, intern];
+    const HTML = GenerateEmployeeHTML(employees);
+    expect(HTML).toBe(outputHTML);
+})
