@@ -2,6 +2,7 @@
 
 
 
+
 ## Description
 
 a command line promp node based application that generates an html with your teams information including manager, engineers, and interns.
@@ -34,6 +35,8 @@ no contributions are accepted at this time.
 You can view the test subfoldler to see the tests this application passes
 
 ## Questions
+
+[Untitled_ Sep 19, 2022 12_03 PM.webm](https://user-images.githubusercontent.com/103536550/191086417-5173a372-87c9-4c0a-a77f-c3095f8b83f2.webm)
 
 Link to my github [profile](https://github.com/brinton0739)
 
